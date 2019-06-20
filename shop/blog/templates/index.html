@@ -1,0 +1,16 @@
+{% extends "parents/main.html" %}
+{% block title %}
+{{ super }} blog-index
+{% endblock %}
+{% block body %}
+{% include "partials/navigation.html" %}
+ <h1>all posts</h1>
+ {% if posts_list %}
+ <ul>
+    {% for post in posts_list%}
+    <li><a href="{% url 'blog:detail' post.id%}">{{ post.slug }}</a></li>
+    {% endfor %}
+ </ul>
+{% endif %}
+{% endblock body %}
+

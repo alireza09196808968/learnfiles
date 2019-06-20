@@ -1,0 +1,10 @@
+{% extends "parents/main.html" %}
+{% block title %}
+{{ super }} blog-archive
+{% endblock %}
+{% block body %}
+{% include "partials/navigation.html" %}
+    {%for post in posts%}
+    <h1>{{post.title}}</h1>
+    {%endfor%}
+{% endblock %}
